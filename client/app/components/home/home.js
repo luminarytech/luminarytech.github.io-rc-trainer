@@ -1,9 +1,11 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import homeComponent from './home.component';
+import loginBox from '../loginbox/loginbox';
 
 let homeModule = angular.module('home', [
-  uiRouter
+  uiRouter,
+  loginBox.name
 ])
 
 .config(($stateProvider, $urlRouterProvider) => {

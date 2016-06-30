@@ -1,3 +1,53 @@
 .app
   height 100%
   background-color $lightBgColor
+
+.text--center
+  text-align center !important
+
+.soft--top
+  padding-top: 32px !important
+
+.push--top
+  margin-top: 32px !important
+
+.push--bottom
+  margin-bottom: 32px !important
+
+.push-gutter--sides
+  margin-right 40px !important
+  margin-left 40px !important
+
+.primary-font--semibold {
+  font-weight 500
+}
+
+@media only screen and (max-width: 575px) {
+  .push-gutter--sides {
+    margin-right: 24px !important;
+    margin-left: 24px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 576px) {
+  .push-gutter--sides {
+    margin-right: 24px !important;
+    margin-left: 24px !important;
+  }
+}
+
+body
+  font 14px "Helvetica Neue", Helvetica, sans-serif
+
+h1
+  font 32px "Helvetica Neue", Helvetica, sans-serif !important
+
+@media (min-width: 320px) and (max-width: 415px) {
+  body {
+    font 16px "Helvetica Neue", Helvetica, sans-serif
+  }
+  h1 {
+    font 24px "Helvetica Neue", Helvetica, sans-serif !important
+  }
+}
+
