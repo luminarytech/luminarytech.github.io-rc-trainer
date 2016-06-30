@@ -49,6 +49,9 @@ let paths = {
 gulp.task('webpack', ['clean'], (cb) => {
   const config = require('./webpack.dist.config');
   config.entry.app = paths.entry;
+  gutil.log('Copying CNAME');
+  gulp.src('./CNAME')
+    .pipe(gulp.dest('./dist'));
 
   webpack(config, (err, stats) => {
     if(err)  {
@@ -114,6 +117,13 @@ gulp.task('component', () => {
       path.basename = path.basename.replace('temp', name);
     }))
     .pipe(gulp.dest(destPath));
+});
+
+gulp.task('cname', function(){
+  gutil.log('Copying CNAME');
+
+  return gulp.src('./CNAME')
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('clean', (cb) => {
