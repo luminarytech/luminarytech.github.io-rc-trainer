@@ -49,6 +49,11 @@ let paths = {
 gulp.task('webpack', ['clean'], (cb) => {
   const config = require('./webpack.dist.config');
   config.entry.app = paths.entry;
+
+  gutil.log('Copying 404.html');
+  gulp.src('./404.html')
+    .pipe(gulp.dest('./dist'));
+
   gutil.log('Copying CNAME');
   gulp.src('./CNAME')
     .pipe(gulp.dest('./dist'));
